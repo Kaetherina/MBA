@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+      html,body{
+        height:100%;
+        padding:0;
+        margin:0;
+      }
+      .oc{
+        display:table;
+        width:100%;
+        height:100%;
+      }
+      .ic{
+        display:table-cell;
+        vertical-align:middle;
+        height:100%;
+      }
+      div.msg{
+        display:block;
+        border:5px solid #0B6121;
+        padding:0;
+        width:800px;
+        font-family:helvetica,sans-serif;
+        margin:10px auto;
+      }
+      h1{
+        font-weight:bold;
+        color:#fff;
+        font-size:20px;
+        margin:0;
+        padding:2px;
+        text-align:center;
+        background: #0B6121;
+      }
+      h2{
+        font-weight:bold;
+        color:#fff;
+        font-size:14px;
+        margin:0;
+        padding:2px;
+        text-align:center;
+        background: #0B6121;
+      }
+      p{
+        font-size:14px;
+        margin:15px auto;
+        width:75%;
+        font-family:helvetica,sans-serif;
+        text-align:center;
+      }
+      j{
+        font-size:14px;
+        margin-left:2in;
+        15px auto;
+        width:75%;
+        font-family:helvetica,sans-serif;
+        text-align:center;
+      }
+    </style>
+    <title>
+      The URL you requested has been blocked
+    </title>
+  </head>
+  <body>
+    <div class="oc">
+      <div class="ic">
+        <div class="msg">
+          <h1>
+            Whoops!  
+          </h1>
+          <h2>
+            Unfortunately, you do not have the correct 
+            proxy settings configured to access the internet.
+          </h2>
+          <p>
+            <br />
+          </head>
+          
+          <body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+            
+            <div class=WordSection1>
+              
+              <p class=MsoNormal align=center style='margin-top:2.0pt;margin-right:0in;
+margin-bottom:2.0pt;margin-left:1in;text-align:center;line-height:normal;
+text-autospace:none'>
+  <span style='font-size:13.0pt;font-family:"Times New Roman",serif'>
+    Configure
+    your proxy settings in the browser to use:
+    <o:p>
+    </o:p>
+  </span>
+              </p>
+              
+              <p class=MsoNormal align=center style='margin-top:2.0pt;margin-right:0in;
+margin-bottom:2.0pt;margin-left:1in;text-align:center;line-height:normal;
+text-autospace:none'>
+  <span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    
+  </span>
+  <a
+  <i>
+    <span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>
+  <b>
+    <i>
+      <u>
+        http://autocache.hp.com
+      </span>
+    </i>
+  </a>
+    </b>
+  </i>
+              </u>
+            </p>
+            
+            
+            <p class=MsoNormal style='margin-top:2.0pt;margin-right:0in;margin-bottom:2.0pt;
+margin-left:0in;line-height:normal;text-autospace:none'>
+  <span style='font-size:
+10.0pt;font-family:"Segoe UI",sans-serif;color:black'>
+  <o:p>
+    
+  </o:p>
+  </span>
+            </p>
+            
+            <p class=MsoNormal style='margin-top:2.0pt;margin-right:0in;margin-bottom:2.0pt;
+margin-left:2.25in;line-height:normal;text-align:left;text-autospace:none'>
+  <span
+  style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    In Internet
+    Explorer follow these steps:
+  </span>
+            </p>
+            
+            <p class=MsoNormal style='margin-top:2.0pt;margin-right:0in;margin-bottom:2.0pt;
+margin-left:1.65in;text-indent:-.25in;line-height:normal;text-autospace:none'>
+  <span
+  style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    1.
+  </span>
+  <span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif'>
+    
+  </span>
+  <span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    From
+    the Internet Explorer 
+    <b>
+      Tools
+    </b>
+    menu, select 
+    <b>
+      Internet
+      Options
+    </b>
+    .  
+  </span>
+            </p>
+            
+            <p class=MsoNormal style='margin-top:2.0pt;margin-right:0in;margin-bottom:2.0pt;
+margin-left:2.62in;text-align:left;text-indent:-.25in;line-height:normal;text-autospace:none'>
+  <span
+  style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    2.
+  </span>
+  <span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif'>
+    
+  </span>
+  <span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    Select the 
+    <b>
+      Connections
+    </b>
+    tab.  
+  </span>
+            </p>
+            
+            <p class=MsoNormal style='margin-top:2.0pt;margin-right:0in;margin-bottom:2.0pt;
+margin-left:2.62in;text-align:left;text-indent:-.25in;line-height:normal;text-autospace:none'>
+  <span
+  style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    3.
+  </span>
+  <span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif'>
+    
+  </span>
+  <span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    Select 
+    <b>
+      LAN
+      Settings
+    </b>
+    .  
+  </span>
+            </p>
+            
+            <p class=MsoNormal style='margin-top:2.0pt;margin-right:0in;margin-bottom:2.0pt;
+margin-left:1.66in;text-indent:-.25in;line-height:normal;text-autospace:none'>
+  <span
+  style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    4.
+  </span>
+  <span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif'>
+    
+  </span>
+  <span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    Uncheck 
+    <b>
+      Automatically
+      detect settings, 
+    </b>
+    if it is currently checked.  
+  </span>
+            </p>
+            
+            <p class=MsoNormal style='margin-top:2.0pt;margin-right:0in;margin-bottom:2.0pt;
+margin-left:.95in;text-indent:-.25in;line-height:normal;text-autospace:none'>
+  <span
+  style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    5.
+  </span>
+  <span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif'>
+    
+  </span>
+  <span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    Check 
+    <b>
+      Use
+      automatic configuration script
+    </b>
+    .  
+  </span>
+            </p>
+            
+            <p class=MsoNormal style='margin-top:2.0pt;margin-right:0in;margin-bottom:2.0pt;
+margin-left:1.25in;text-indent:-.25in;line-height:normal;text-autospace:none'>
+  <span
+  style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    6.
+  </span>
+  <span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif'>
+    
+  </span>
+  <span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    In
+    the Address field, enter: 
+  </span>
+  <b>
+    <span
+    style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+      http://autocache.hp.com
+    </span>
+  </b>
+            </a>
+            <span
+            style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+              .  
+            </span>
+          </p>
+          
+          <p class=MsoNormal style='margin-top:2.0pt;margin-right:0in;margin-bottom:2.0pt;
+margin-left:.965in;text-indent:-.25in;line-height:normal;text-autospace:none'>
+  <span
+  style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    7.
+  </span>
+  <span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif'>
+    
+  </span>
+  <span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    Uncheck 
+    <b>
+      Use
+      a proxy server for your LAN
+    </b>
+    .  
+  </span>
+          </p>
+          
+          <p class=MsoNormal style='margin-top:2.0pt;margin-right:0in;margin-bottom:2.0pt;
+margin-left:0.03in;text-indent:-.29in;line-height:normal;text-autospace:none'>
+  <span
+  style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    8.
+  </span>
+  <span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif'>
+    
+  </span>
+  <span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+    Select 
+    <b>
+      OK
+    </b>
+    twice. 
+  </span>
+  <span
+  style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;color:black'>
+    
+  </span>
+          </p>
+          
+          
+          <br />
+        </div>

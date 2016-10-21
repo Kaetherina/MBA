@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MBA:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="MessageBrokerApplication.war">
+      <element id="artifact" artifact-name="MBA:war exploded" />
+    </root>
+  </artifact>
+</component>
