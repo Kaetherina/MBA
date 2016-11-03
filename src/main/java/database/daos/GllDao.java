@@ -79,7 +79,7 @@ public class GllDao /*implements Dao<String, Gll>*/  {
     }
 
     //@Override
-    public Gll gllGPSbyVin(String vin) {
+    public Gll lastGllbyVin(String vin) {
         Connection con = getConnection();
         PreparedStatement statement = null;
         ResultSet result = null;

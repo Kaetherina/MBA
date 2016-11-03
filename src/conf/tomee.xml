@@ -2,7 +2,7 @@
 <tomee>
     <Resource id="mbaDb" type="DataSource">
         JdbcDriver org.h2.Driver
-        JdbcUrl jdbc:h2:file:~/meetmedb;DB_CLOSE_DELAY=-1
+        JdbcUrl jdbc:h2:file:~/mbaDb;DB_CLOSE_DELAY=-1
         UserName sa
         Password
         JtaManaged true

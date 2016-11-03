@@ -1,5 +1,6 @@
 package rest;
 
+import database.Transaction;
 import domain.Gll;
 import groovy.lang.Singleton;
 import org.codehaus.jackson.JsonParseException;
@@ -8,6 +9,7 @@ import org.codehaus.jackson.map.SerializationConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
@@ -27,7 +29,9 @@ import database.daos.GllDao;
 public class TestService {
     private static final Logger log = LoggerFactory.getLogger(TestService.class);
 
-    //@Inject die daos später
+    @Inject GllDao gllDao;
+    @Inject
+    Transaction transaction;
 
     @Path("ping")
     @GET
@@ -47,7 +51,22 @@ public class TestService {
         GllDao dao = new GllDao();
         try{
             Gll gll = mapper.readValue(jsonString, Gll.class);
-            System.out.println(gll.getVin());
+            /* ToDo: failed part: getConnection in gllDao - reason yet unknown
+            String vin = gll.getVin();
+            System.out.println("Transaction wird geöffnet... ");
+            transaction.begin();
+            System.out.println("success");
+            System.out.println("Das GLL Objekt soll jetzt in die DB gespeichert werden... ");
+            gllDao.persist(gll);
+            transaction.commit();
+            System.out.println("success");
+            System.out.print("Und hole das Gll Objekt... ");
+            transaction.begin();
+            Gll fetched = gllDao.lastGllbyVin(vin);
+            transaction.commit();
+            System.out.println("success! The fetched vin is "+ fetched.getVin());
+*/
+            System.out.println("The entered VIN is: " + gll.getVin());
             mapper.enable(SerializationConfig.Feature.INDENT_OUTPUT);
             //String backToString = mapper.writeValueAsString(gll);
         }
