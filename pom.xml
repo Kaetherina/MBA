@@ -117,7 +117,15 @@
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.13</version>
         </dependency>
-
+        <dependency>
+            <groupId>SecureDataApp</groupId>
+            <artifactId>SimpleApiJava</artifactId>
+            <version>1.0</version>
+            <!-- inserted with help of https://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html
+             mvn install:install-file -Dfile=C:\Users\vrettos\Documents\vibesimplejava.jar -DgroupId=SecureDataApp -DartifactId=SimpleApiJava -Dversion=1.0 -Dpackaging=jar
+             to insert it in this project (added to the SecIoT project, to be reused in cloudServer, edgeServer and
+             eventually SecureIoT-client-->
+        </dependency>
     </dependencies>
 
     <build>

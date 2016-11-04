@@ -7,9 +7,10 @@
     <persistence-unit name="mbaDb" transaction-type="JTA">
         <jta-data-source>java:jboss/datasources/mbaDb</jta-data-source>
 
-        <!--class>de.dhbw.meetme.domain.User</class>
-        <class>de.dhbw.meetme.domain.UuidId</class-->
+
         <class>domain.Gll</class>
+        <class>domain.UuidId</class>
+        <class>domain.PersistentObject</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>

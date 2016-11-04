@@ -2,6 +2,7 @@ package rest;
 
 import database.Transaction;
 import domain.Gll;
+import jsonObjects.JsonGll;
 import groovy.lang.Singleton;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -48,25 +49,23 @@ public class TestService {
     public String acceptJson(String jsonString) throws Exception{
 
         ObjectMapper mapper = new ObjectMapper();
-        GllDao dao = new GllDao();
         try{
-            Gll gll = mapper.readValue(jsonString, Gll.class);
-            /* ToDo: failed part: getConnection in gllDao - reason yet unknown
+            JsonGll jGll = mapper.readValue(jsonString, JsonGll.class);
+            Gll gll = jsonToDomain(jGll);
+            // ToDo: failed part: getConnection in gllDao - reason yet unknown
             String vin = gll.getVin();
-            System.out.println("Transaction wird geöffnet... ");
             transaction.begin();
-            System.out.println("success");
-            System.out.println("Das GLL Objekt soll jetzt in die DB gespeichert werden... ");
+            System.out.println("Storing the Gll Object in the Database... ");
             gllDao.persist(gll);
             transaction.commit();
             System.out.println("success");
-            System.out.print("Und hole das Gll Objekt... ");
+            System.out.println();
+            System.out.println("Fetching the last Gll Object... ");
             transaction.begin();
             Gll fetched = gllDao.lastGllbyVin(vin);
             transaction.commit();
-            System.out.println("success! The fetched vin is "+ fetched.getVin());
-*/
-            System.out.println("The entered VIN is: " + gll.getVin());
+            System.out.println("success! The entered and fetched vin is "+ fetched.getVin());
+
             mapper.enable(SerializationConfig.Feature.INDENT_OUTPUT);
             //String backToString = mapper.writeValueAsString(gll);
         }
@@ -85,5 +84,15 @@ public class TestService {
         "timestamp" : "2008-05-09,08:12:31"
         }
         */
+    }
+
+    public Gll jsonToDomain(JsonGll jg){
+        Gll gll = new Gll();
+        gll.setVin(jg.getVin());
+        gll.setTimestamp(jg.getTimestamp());
+        gll.setLatitude(jg.getLatitude());
+        gll.setLongitude(jg.getLongitude());
+        gll.setAltitude(jg.getAltitude());
+        return gll;
     }
 }

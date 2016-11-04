@@ -1,13 +1,9 @@
-package domain;
-
-import javax.persistence.Entity;
+package jsonObjects;
 
 /**
- * Created by vrettos on 14.10.2016.
+ * Created by vrettos on 04.11.2016.
  */
-
-@Entity
-public class Gll extends PersistentObject{
+public class JsonGll {
     private String vin;
     private String ts;
     private double latitude;
@@ -56,5 +52,3 @@ public class Gll extends PersistentObject{
     }
 
 }
-
-
