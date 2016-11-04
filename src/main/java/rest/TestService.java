@@ -52,7 +52,6 @@ public class TestService {
         try{
             JsonGll jGll = mapper.readValue(jsonString, JsonGll.class);
             Gll gll = jsonToDomain(jGll);
-            // ToDo: failed part: getConnection in gllDao - reason yet unknown
             String vin = gll.getVin();
             transaction.begin();
             System.out.println("Storing the Gll Object in the Database... ");
