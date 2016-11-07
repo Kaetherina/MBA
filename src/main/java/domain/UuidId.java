@@ -8,6 +8,7 @@ import java.util.UUID;
 /**
  * Created by vrettos on 04.11.2016.
  * ID wid in jede Tabelle in der Datenbank eingebaut
+ * use asString() to convert to a String, not toString witch gives it in json
  */
 @Embeddable
 //instances are stored as intrinsic part of an owning entity and share the identity of the entity

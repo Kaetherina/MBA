@@ -42,7 +42,7 @@ public class GllDao implements Dao<String, Gll>  {
         PreparedStatement statement = null;
         try{
             statement = con.prepareStatement("insert into gll(id, vin, ts, latitude, longitude, altitude) values (?, ?,  ?, ?, ?, ?)");
-            statement.setString(1, entity.getId().toString());
+            statement.setString(1, entity.getId().asString());
             statement.setString(2, entity.getVin());
             statement.setString(3, entity.getTimestamp());
             statement.setDouble(4, entity.getLatitude());
@@ -112,6 +112,24 @@ public class GllDao implements Dao<String, Gll>  {
         return datalist;
     }
 
+    public void dropGll(){
+        Connection con = getConnection();
+        PreparedStatement statement = null;
+        try{
+            statement = con.prepareStatement("drop table Gll");
+            statement.executeUpdate();
+            statement.close();
+        }catch(SQLException e){
+            throw new RuntimeException("Could not delete Table Gll: " + e);
+        }finally{
+            try{
+                if(statement != null && !statement.isClosed())
+                    statement.close();
+            }catch(SQLException e){
+                //ignore
+            }
+        }
+    }
     @Override
     public void delete(String gllId){
         Connection con = getConnection();
@@ -187,8 +205,10 @@ public class GllDao implements Dao<String, Gll>  {
             statement = con.prepareStatement("select id, vin, ts, latitude, longitude, altitude from gll where id = ?");
             statement.setString(1, gllId);
             result = statement.executeQuery();
-            if (!result.next())
+            if (!result.next()) {
+                System.out.println("didn't find row in Gll with id " + gllId);
                 return null;
+            }
             if (result.getFetchSize() > 1) {
                 throw new RuntimeException("Id not unique!");
             }
