@@ -30,6 +30,8 @@ abstract public class PersistentObject {
         this.id = id;
     }
 
+    public void setId(String id){ this.id = UuidId.fromString(id);}
+
     @Override
     //just because it overrides a method declaration in a supertype
     public boolean equals(Object o) {

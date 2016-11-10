@@ -1,5 +1,7 @@
 package domain;
 
+import jsonObjects.JsonGll;
+
 import javax.persistence.Entity;
 
 /**
@@ -55,6 +57,15 @@ public class Gll extends PersistentObject{
         this.altitude = altitude;
     }
 
+    public JsonGll toJson(){
+        JsonGll jg = new JsonGll();
+        jg.setVin(this.getVin());
+        jg.setTimestamp(this.getTimestamp());
+        jg.setLatitude(this.getLatitude());
+        jg.setLongitude(this.getLongitude());
+        jg.setAltitude(this.getAltitude());
+        return jg;
+    }
 }
 
 

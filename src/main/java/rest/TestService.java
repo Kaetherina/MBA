@@ -1,5 +1,6 @@
 package rest;
 
+import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
 import database.Transaction;
 import domain.Gll;
 import jsonObjects.JsonGll;
@@ -32,8 +33,7 @@ public class TestService {
     private static final Logger log = LoggerFactory.getLogger(TestService.class);
 
     @Inject GllDao gllDao;
-    @Inject
-    Transaction transaction;
+    @Inject Transaction transaction;
 
     @Path("ping")
     @GET
@@ -57,8 +57,9 @@ public class TestService {
 
         try {
             for (Gll data : list) {
-                jg = domainToJson(data);
+                jg = data.toJson();
                 String json = mapper.writeValueAsString(jg);
+                System.out.println("appending json:" + json);
                 sb.append(json);
                 sb.append(",");
             }
@@ -83,7 +84,7 @@ public class TestService {
         ObjectMapper mapper = new ObjectMapper();
         try{
             JsonGll jGll = mapper.readValue(jsonString, JsonGll.class);
-            Gll gll = jsonToDomain(jGll);
+            Gll gll = jGll.toDomain();
             System.out.println("used id asString: "+gll.getId().asString());
             String vin = gll.getVin();
             transaction.begin();
@@ -121,26 +122,8 @@ public class TestService {
         */
     }
 
-    public Gll jsonToDomain(JsonGll jg){
-        Gll gll = new Gll();
-        gll.setVin(jg.getVin());
-        gll.setTimestamp(jg.getTimestamp());
-        gll.setLatitude(jg.getLatitude());
-        gll.setLongitude(jg.getLongitude());
-        gll.setAltitude(jg.getAltitude());
-        return gll;
-    }
 
-    public JsonGll domainToJson(Gll g){
-        JsonGll jg = new JsonGll();
-        jg.setVin(g.getVin());
-        jg.setTimestamp(g.getTimestamp());
-        jg.setLatitude(g.getLatitude());
-        jg.setLongitude(g.getLongitude());
-        jg.setAltitude(g.getAltitude());
-        return jg;
-    }
-
+    //used to delete corrupt values
     @Path("/delete/{id}")
     @GET
     public String delete(@PathParam("id") String id){
@@ -152,6 +135,8 @@ public class TestService {
         return "done deleting the entry with id " + id;
     }
 
+
+    /* don*t use in production - only if ALL entered values are flawed
     @Path("/dropGll")
     @GET
     public String drop(){
@@ -162,4 +147,5 @@ public class TestService {
         log.debug("done, best test once more with list");
         return "done dropping the table, better test with list..";
     }
+    */
 }

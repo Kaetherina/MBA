@@ -62,26 +62,25 @@ public class GllDao implements Dao<String, Gll>  {
         }
     }
 
-
     @Override
     public Collection<Gll> list() {
         Connection con = getConnection();
         PreparedStatement statement = null;
         ResultSet result = null;
         List<Gll> datalist = new ArrayList<>();
-        Gll data = new Gll();
+
         try {
-            statement = con.prepareStatement("select id, vin, ts, latitude, longitude, altitude from gll ORDER BY vin, ts DESC");
+            statement = con.prepareStatement("select id, vin, ts, latitude, longitude, altitude from gll ORDER BY vin, ts");
             result = statement.executeQuery();
 
             if (!result.next()) {
                 System.out.println("nothing in the database!");
                 return null;
             }
-
+            System.out.println("output from the database:");
             while(result.next()) {
-
-                data.setId(UuidId.fromString(result.getString(1)));
+                Gll data = new Gll();
+                data.setId(result.getString(1));
                 data.setVin(result.getString(2));
                 data.setTimestamp(result.getString(3));
                 data.setLatitude(result.getDouble(4));
@@ -112,45 +111,6 @@ public class GllDao implements Dao<String, Gll>  {
         return datalist;
     }
 
-    public void dropGll(){
-        Connection con = getConnection();
-        PreparedStatement statement = null;
-        try{
-            statement = con.prepareStatement("drop table Gll");
-            statement.executeUpdate();
-            statement.close();
-        }catch(SQLException e){
-            throw new RuntimeException("Could not delete Table Gll: " + e);
-        }finally{
-            try{
-                if(statement != null && !statement.isClosed())
-                    statement.close();
-            }catch(SQLException e){
-                //ignore
-            }
-        }
-    }
-    @Override
-    public void delete(String gllId){
-        Connection con = getConnection();
-        PreparedStatement statement = null;
-        try {
-            statement = con.prepareStatement("delete from gll where id = ?");
-            statement.setString(1, gllId);
-            statement.executeUpdate();
-            statement.close();
-        } catch (SQLException e) {
-            throw new RuntimeException("Could not update database", e);
-        } finally {
-            try {
-                if (statement != null && !statement.isClosed())
-                    statement.close();
-            } catch (SQLException e) {
-                // ignore
-            }
-        }
-    }
-
     public Gll lastGllbyVin(String vin) {
         Connection con = getConnection();
         PreparedStatement statement = null;
@@ -167,7 +127,7 @@ public class GllDao implements Dao<String, Gll>  {
             }
 
             Data = new Gll();
-            Data.setId(UuidId.fromString(result.getString(1)));
+            Data.setId(result.getString(1));
             Data.setVin(result.getString(2));
             Data.setTimestamp(result.getString(3));
             Data.setLatitude(result.getDouble(4));
@@ -214,7 +174,7 @@ public class GllDao implements Dao<String, Gll>  {
             }
 
             Data = new Gll();
-            Data.setId(UuidId.fromString(gllId));
+            Data.setId(gllId);
             Data.setVin(result.getString(2));
             Data.setTimestamp(result.getString(3));
             Data.setLatitude(result.getDouble(4));
@@ -240,5 +200,45 @@ public class GllDao implements Dao<String, Gll>  {
             }
         }
         return Data;
+    }
+
+    @Override
+    public void delete(String gllId){
+        Connection con = getConnection();
+        PreparedStatement statement = null;
+        try {
+            statement = con.prepareStatement("delete from gll where id = ?");
+            statement.setString(1, gllId);
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException("Could not update database", e);
+        } finally {
+            try {
+                if (statement != null && !statement.isClosed())
+                    statement.close();
+            } catch (SQLException e) {
+                // ignore
+            }
+        }
+    }
+
+    public void dropGll(){
+        Connection con = getConnection();
+        PreparedStatement statement = null;
+        try{
+            statement = con.prepareStatement("drop table Gll");
+            statement.executeUpdate();
+            statement.close();
+        }catch(SQLException e){
+            throw new RuntimeException("Could not delete Table Gll: " + e);
+        }finally{
+            try{
+                if(statement != null && !statement.isClosed())
+                    statement.close();
+            }catch(SQLException e){
+                //ignore
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-package servlet;
+package rest;
 
 import database.daos.GllDao;
 import org.h2.tools.Server;

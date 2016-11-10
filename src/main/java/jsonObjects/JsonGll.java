@@ -1,5 +1,7 @@
 package jsonObjects;
 
+import domain.Gll;
+
 /**
  * Created by vrettos on 04.11.2016.
  */
@@ -49,6 +51,16 @@ public class JsonGll {
 
     public void setAltitude(double altitude) {
         this.altitude = altitude;
+    }
+
+    public Gll toDomain(){
+        Gll gll = new Gll();
+        gll.setVin(this.getVin());
+        gll.setTimestamp(this.getTimestamp());
+        gll.setLatitude(this.getLatitude());
+        gll.setLongitude(this.getLongitude());
+        gll.setAltitude(this.getAltitude());
+        return gll;
     }
 
 }
