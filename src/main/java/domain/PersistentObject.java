@@ -26,6 +26,10 @@ abstract public class PersistentObject {
         return id;
     }
 
+    public String getIdStr(){
+        return id.asString();
+    }
+
     public void setId(UuidId id) {
         this.id = id;
     }

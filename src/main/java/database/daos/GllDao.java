@@ -78,7 +78,7 @@ public class GllDao implements Dao<String, Gll>  {
                 return null;
             }
             System.out.println("output from the database:");
-            while(result.next()) {
+            do {
                 Gll data = new Gll();
                 data.setId(result.getString(1));
                 data.setVin(result.getString(2));
@@ -88,7 +88,7 @@ public class GllDao implements Dao<String, Gll>  {
                 data.setAltitude(result.getDouble(6));
 
                 datalist.add(data);
-            }
+            }while(result.next());
             result.close();
             statement.close();
 

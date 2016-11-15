@@ -2,6 +2,7 @@ package domain;
 
 import jsonObjects.JsonGll;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 /**
@@ -12,8 +13,11 @@ import javax.persistence.Entity;
 public class Gll extends PersistentObject{
     private String vin;
     private String ts;
+    @Column(columnDefinition ="DOUBLE")
     private double latitude;
+    @Column(columnDefinition ="DOUBLE")
     private double longitude;
+    @Column(columnDefinition ="DOUBLE")
     private double altitude;
 
 

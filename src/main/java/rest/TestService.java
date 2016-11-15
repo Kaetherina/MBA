@@ -83,24 +83,23 @@ public class TestService {
 
         ObjectMapper mapper = new ObjectMapper();
         try{
+            System.out.println("1. received json String: "+jsonString);
             JsonGll jGll = mapper.readValue(jsonString, JsonGll.class);
             Gll gll = jGll.toDomain();
-            System.out.println("used id asString: "+gll.getId().asString());
-            String vin = gll.getVin();
+            System.out.println("2. Gll Data: id="+ gll.getIdStr() + " lat:" + gll.getLatitude() + " lon:" + gll.getLongitude() + " alt: " + gll.getAltitude() + " ts:" + gll.getTimestamp() );
             transaction.begin();
-            System.out.println("Storing the Gll Object in the Database... ");
+            System.out.print("Storing the Gll Object in the Database... ");
             gllDao.persist(gll);
             transaction.commit();
             System.out.println("success");
             System.out.println();
-            System.out.println("Fetching the entered Gll Object... ");
+            System.out.print("Fetching the entered Gll Object... ");
             transaction.begin();
             Gll fetched = gllDao.get(gll.getId().asString());
             transaction.commit();
             System.out.println("success");
 
-            System.out.println("The entered and fetched vin is "+ fetched.getVin());
-            System.out.println("also, the entered id was " + gll.getId().asString() + " and the fetched id was " + fetched.getId().asString());
+            System.out.println("2. Gll Data: id="+ fetched.getIdStr() + " lat:" + fetched.getLatitude() + " lon:" + fetched.getLongitude() + " alt: " + fetched.getAltitude() + " ts:" + fetched.getTimestamp() );
 
             mapper.enable(SerializationConfig.Feature.INDENT_OUTPUT);
             //String backToString = mapper.writeValueAsString(gll);
@@ -136,7 +135,7 @@ public class TestService {
     }
 
 
-    /* don*t use in production - only if ALL entered values are flawed
+    // don*t use in production - only if ALL entered values are flawed
     @Path("/dropGll")
     @GET
     public String drop(){
@@ -147,5 +146,5 @@ public class TestService {
         log.debug("done, best test once more with list");
         return "done dropping the table, better test with list..";
     }
-    */
+
 }
